@@ -1,7 +1,3 @@
-require 'AastraIPPhone.rb'
-require 'AastraIPPhoneTextMenuEntry.rb'
-require 'arraynatsort.rb'
-
 ################################################################################
 # Aastra XML API Classes - AastraIPPhoneTextMenu
 # Copyright Aastra Telecom 2008

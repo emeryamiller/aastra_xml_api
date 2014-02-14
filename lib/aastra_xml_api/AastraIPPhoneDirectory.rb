@@ -1,7 +1,3 @@
-require 'AastraIPPhone.rb'
-require 'AastraIPPhoneDirectoryEntry.rb'
-require 'arraynatsort.rb'
-
 ################################################################################
 # Aastra XML API Classes - AastraIPPhoneDirectory
 # Copyright Aastra Telecom 2008

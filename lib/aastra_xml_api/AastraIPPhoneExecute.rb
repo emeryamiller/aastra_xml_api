@@ -1,6 +1,3 @@
-require 'AastraIPPhone.rb'
-require 'AastraIPPhoneExecuteEntry.rb'
-
 ################################################################################
 # Aastra XML API Classes - AastraIPPhoneExecute
 # Copyright Aastra Telecom 2008

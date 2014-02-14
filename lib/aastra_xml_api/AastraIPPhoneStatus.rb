@@ -1,6 +1,3 @@
-require 'AastraIPPhone.rb'
-require 'AastraIPPhoneStatusEntry.rb'
-
 ################################################################################
 # Aastra XML API Classes - AastraIPPhoneStatus
 # Copyright Aastra Telecom 2008

@@ -1,6 +1,3 @@
-require 'AastraIPPhone.rb'
-require 'AastraIPPhoneConfigurationEntry.rb'
-
 ################################################################################
 # Aastra XML API Classes - AastraIPPhoneConfiguration
 # Copyright Aastra Telecom 8007

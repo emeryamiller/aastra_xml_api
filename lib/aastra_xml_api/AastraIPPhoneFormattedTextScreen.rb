@@ -1,6 +1,3 @@
-require 'AastraIPPhone.rb'
-require 'AastraIPPhoneFormattedTextScreenEntry.rb'
-
 ################################################################################
 # Aastra XML API Classes - AastraIPFormattedPhoneTextScreen
 # Copyright Aastra Telecom 2008

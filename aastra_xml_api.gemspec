@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.email         = ["emery.miller@easyofficephone.com"]
   spec.description   = %q{Gemified version of Carlton O'Riley's Aastra XML Ruby Port}
   spec.summary       = %q{Aastra XML API for Ruby}
-  spec.homepage      = ""
-  spec.license       = "MIT for gem - Aastra code is copywrite"
+  spec.homepage      = "http://www.easyofficephone.com"
+  spec.license       = "GNU GPL v2"
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
@@ -19,5 +19,4 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.3"
-  spec.add_development_dependency "rake"
 end

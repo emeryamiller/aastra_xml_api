@@ -1,7 +1,3 @@
-require 'cgi'
-require 'AastraIPPhoneSoftkeyEntry.rb'
-require 'AastraIPPhoneIconEntry.rb'
-
 ###############################################################################
 # Aastra XML API Classes - AastraIPPhone
 # Copyright Aastra Telecom 2008

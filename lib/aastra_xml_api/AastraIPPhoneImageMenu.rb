@@ -1,6 +1,3 @@
-require 'AastraIPPhone.rb'
-require 'AastraIPPhoneImageMenuEntry.rb'
-
 ################################################################################
 # Aastra XML API Classes - AastraIPPhoneImageMenu
 # Copyright Aastra Telecom 2008

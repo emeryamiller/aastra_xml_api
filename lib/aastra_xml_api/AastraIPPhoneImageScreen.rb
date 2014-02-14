@@ -1,5 +1,3 @@
-require 'AastraIPPhone.rb'
-
 ################################################################################
 # Aastra XML API Classes - AastraIPPhoneImageScreen
 # Copyright Aastra Telecom 2008

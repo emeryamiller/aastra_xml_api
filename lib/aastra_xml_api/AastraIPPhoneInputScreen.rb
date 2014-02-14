@@ -1,7 +1,3 @@
-require 'AastraIPPhone.rb'
-require 'AastraIPPhoneInputScreenEntry.rb'
-require 'AastraIPPhoneSoftkeyEntry.rb'
-
 ################################################################################
 # Aastra XML API Classes - AastraIPPhoneInputScreen
 # Copyright Aastra Telecom 2008
