@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.description   = %q{Gemified version of Carlton O'Riley's Aastra XML Ruby Port}
   spec.summary       = %q{Aastra XML API for Ruby}
   spec.homepage      = ""
-  spec.license       = "MIT for the gem - but Aastra API is copywrite as indicated in code"
+  spec.license       = "MIT for gem - Aastra code is copywrite"
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
