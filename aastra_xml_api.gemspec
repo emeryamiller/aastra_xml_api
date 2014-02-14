@@ -8,10 +8,10 @@ Gem::Specification.new do |spec|
   spec.version       = AastraXmlApi::VERSION
   spec.authors       = ["Emery A. Miller"]
   spec.email         = ["emery.miller@easyofficephone.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Gemified version of Carlton O'Riley's Aastra XML Ruby Port}
+  spec.summary       = %q{Aastra XML API for Ruby}
   spec.homepage      = ""
-  spec.license       = "MIT"
+  spec.license       = "MIT for the gem - but Aastra API is copywrite as indicated in code"
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
