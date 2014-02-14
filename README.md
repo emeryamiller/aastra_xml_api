@@ -1,6 +1,7 @@
 # AastraXmlApi
 
-TODO: Write a gem description
+This is a Gem of Carlton O'Riley's port of Aastra XML API Classes
+To view the original project: https://code.google.com/p/ruby-aastra/
 
 ## Installation
 
@@ -18,7 +19,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    require 'aastra_xml_api'
+    
+    AastraIPPhone.new ...
 
 ## Contributing
 
@@ -27,3 +30,7 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+# License
+
+GPL v2 - because the original project is GPL v2
