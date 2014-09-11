@@ -67,7 +67,7 @@ module AastraXmlApi
     # before Bob10.
     def natsortByName
       tmparray = []
-      tmp_array.include(ArrayExtension)
+      tmparray.include(ArrayExtension)
       linklist = {}
       for i in 0..@entries.size-1
         tmparray += [@entries[i].getName]

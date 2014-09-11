@@ -93,7 +93,7 @@ module AastraXmlApi
     # Use natural order sorting to sort the menu by name.
     def natsortByName
       tmparray = []
-      tmp_array.include(ArrayExtension)
+      tmparray.include(ArrayExtension)
       linklist = {}
       for i in 0..@entries.size-1
         tmparray += [@entries[i].getName]
