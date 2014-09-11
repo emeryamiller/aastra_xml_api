@@ -1,19 +1,19 @@
 ################################################################################
-# Aastra XML API Classes - AastraIpPhoneConfigurationEntry
+# Aastra XML API Classes - PhoneConfigurationEntry
 # Firmware 2.0 or better
 # Copyright Aastra Telecom 2008
 #
 # Ruby adaptation by Carlton O'Riley
 #
-# Internal class for AastraIpPhoneConfiguration object.
+# Internal class for PhoneConfiguration object.
 ################################################################################
 module AastraXmlApi
-  class AastraIpPhoneConfigurationEntry < AastraIpPhone
+  class PhoneConfigurationEntry < Phone
     @parameter
     @value
 
     # Create a new parameter/value pair.  This overrides the
-    # initialize method in AastraIpPhone.
+    # initialize method in Phone.
     def initialize(parameter, value)
       @parameter = parameter
       @value = value

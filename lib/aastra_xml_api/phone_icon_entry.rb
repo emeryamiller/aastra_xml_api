@@ -1,15 +1,15 @@
 ################################################################################
-# Aastra XML API Classes - AastraIpIconEntry
+# Aastra XML API Classes - IconEntry
 # Firmware 2.0 or better
 # Copyright Aastra Telecom 8007
 #
 # Ruby adaptation by Carlton O'Riley
 #
-# Internal class for AastraIpPhone object.
+# Internal class for Phone object.
 ################################################################################
 
 module AastraXmlApi
-  class AastraIpPhoneIconEntry
+  class PhoneIconEntry
     @index
     @icon
 

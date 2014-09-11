@@ -1,14 +1,14 @@
 ################################################################################
-# Aastra XML API Classes - AastraIpPhoneInputScreen
+# Aastra XML API Classes - PhoneInputScreen
 # Copyright Aastra Telecom 2008
 #
 # Ruby adaptation by Carlton O'Riley
 #
-# AastraIpPhoneInputScreen object.
+# PhoneInputScreen object.
 #
 # Public methods
 #
-# Inherited from AastraIpPhone
+# Inherited from Phone
 #     setTitle(Title) to setup the title of an object (optional)
 #     setTitleWrap to set the title to be wrapped on 2 lines (optional)
 #     setDestroyOnExit to set DestroyonExit parameter to 'yes', 'no' by default (optional)
@@ -53,8 +53,8 @@
 #     addFieldSoftkey(index,label,uri,icon) to add custom softkeys to the input field, overrides the softkeys set by addSoftkey.
 #
 # Example 1 - Single Input
-#     require 'AastraIpPhoneInputScreen.rb'
-#     input = AastraIpPhoneInputScreen.new
+#     require 'PhoneInputScreen.rb'
+#     input = PhoneInputScreen.new
 #     input.setTitle('Title')
 #     input.setPrompt('Enter your password')
 #     input.setParameter('param')
@@ -66,8 +66,8 @@
 #     aastra_output input
 #
 # Example 2 - Multiple Inputs
-#     require 'AastraIpPhoneInputScreen.rb'
-#     input = AastraIpPhoneInputScreen.new
+#     require 'PhoneInputScreen.rb'
+#     input = PhoneInputScreen.new
 #     input.setTitle('Example 2')
 #     input.setDisplayMode('condensed')
 #     input.setURL('http://myserver.com/script.php')
@@ -86,7 +86,7 @@
 ################################################################################
 
 module AastraXmlApi
-  class AastraIpPhoneInputScreen < AastraIpPhone
+  class PhoneInputScreen < Phone
     @url
     @type
     @parameter
@@ -158,7 +158,7 @@ module AastraXmlApi
     # Add a new field to get input for.  The type can be one of IP,
     # string (default), number, timeUS, timeInt, dateUS, or dateInt.
     def addField(type=nil)
-      @entries += [AastraIpPhoneInputScreenEntry.new(type)]
+      @entries += [PhoneInputScreenEntry.new(type)]
     end
 
     # Sets the type (see addField for values) of the most recently added
@@ -211,7 +211,7 @@ module AastraXmlApi
     # Create XML text output.
     def render
       @type = 'string' if @type.nil?
-      xml = "<AastraIpPhoneInputScreen type=\"#{@type}\""
+      xml = "<PhoneInputScreen type=\"#{@type}\""
       xml += " password=\"yes\"" if @password == "yes"
       xml += " destroyOnExit=\"yes\"" if @destroyOnExit == "yes"
       xml += " cancelAction=\"#{escape(@cancelAction)}\"" if not @cancelAction.nil?
@@ -244,7 +244,7 @@ module AastraXmlApi
         xml += icon.render
       end
       xml += "</IconList>\n" if iconList != 0
-      xml += "</AastraIpPhoneInputScreen>\n"
+      xml += "</PhoneInputScreen>\n"
       return xml
     end
   end

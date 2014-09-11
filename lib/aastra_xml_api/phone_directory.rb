@@ -1,14 +1,14 @@
 ################################################################################
-# Aastra XML API Classes - AastraIpPhoneDirectory
+# Aastra XML API Classes - PhoneDirectory
 # Copyright Aastra Telecom 2008
 #
 # Ruby adaptation by Carlton O'Riley
 #
-# AastraIpPhoneDirectory object.
+# PhoneDirectory object.
 #
 # Public methods
 #
-# Inherited from AastraIpPhone
+# Inherited from Phone
 #     setTitle(Title) to setup the title of an object (optional)
 #     setTitleWrap to set the title to be wrapped on 2 lines (optional)
 #     setDestroyOnExit to set DestroyonExit parameter to 'yes', 'no' by default (optional)
@@ -27,8 +27,8 @@
 #     natsortbyname to order the list
 #
 # Example
-#     require 'AastraIpPhoneDirectory.rb'
-#     directory = AastraIpPhoneDirectory.new
+#     require 'PhoneDirectory.rb'
+#     directory = PhoneDirectory.new
 #     directory.setTitle('Title')
 #     directory.setNext('http://myserver.com/script.php?page=2')
 #     directory.setPrevious('http://myserver.com/script.php?page=0')
@@ -43,7 +43,7 @@
 ################################################################################
 
 module AastraXmlApi
-  class AastraIpPhoneDirectory < AastraIpPhone
+  class PhoneDirectory < Phone
     @next
     @previous
 
@@ -60,7 +60,7 @@ module AastraXmlApi
     # Add directory entry with a name to be displayed and a telephone
     # number to dial.
     def addEntry(name, telephone)
-      @entries += [AastraIpPhoneDirectoryEntry.new(name, telephone)]
+      @entries += [PhoneDirectoryEntry.new(name, telephone)]
     end
 
     # Sort array of names using natural sort order. i.e. Bob2 comes
@@ -83,7 +83,7 @@ module AastraXmlApi
 
     # Create XML text output.
     def render
-      out = "<AastraIpPhoneDirectory"
+      out = "<PhoneDirectory"
       if not @previous.nil? then
         previous = escape(@previous)
         out += " previous=\"#{previous}\""
@@ -115,7 +115,7 @@ module AastraXmlApi
       @softkeys.each do |softkey|
         out += softkey.render
       end
-      out += "</AastraIpPhoneDirectory>\n"
+      out += "</PhoneDirectory>\n"
       return out
     end
   end

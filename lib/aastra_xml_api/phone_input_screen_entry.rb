@@ -1,15 +1,15 @@
 ################################################################################
-# Aastra XML API Classes - AastraIpPhoneInputScreenEntry
+# Aastra XML API Classes - PhoneInputScreenEntry
 # Firmware 2.2.0 or better
 # Copyright Aastra Telecom 2008
 #
 # Ruby adaptation by Carlton O'Riley
 #
-# Internal class for AastraIpPhoneInputScreen object.
+# Internal class for PhoneInputScreen object.
 ################################################################################
 
 module AastraXmlApi
-  class AastraIpPhoneInputScreenEntry
+  class PhoneInputScreenEntry
     @type
     @password
     @editable
@@ -64,7 +64,7 @@ module AastraXmlApi
 
     # Adds softkey to be displayed when editing this field.
     def addSoftkey(index, label, uri, icon=nil)
-      @softkeys += [AastraIpPhoneSoftkeyEntry.new(index, label, uri, icon)]
+      @softkeys += [PhoneSoftkeyEntry.new(index, label, uri, icon)]
     end
 
     # Create XML text output for this entry.

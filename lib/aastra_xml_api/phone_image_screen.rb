@@ -1,14 +1,14 @@
 ################################################################################
-# Aastra XML API Classes - AastraIpPhoneImageScreen
+# Aastra XML API Classes - PhoneImageScreen
 # Copyright Aastra Telecom 2008
 #
 # Ruby adaptation by Carlton O'Riley
 #
-# AastraIpPhoneImageScreen object.
+# PhoneImageScreen object.
 #
 # Public methods
 #
-# Inherited from AastraIpPhone
+# Inherited from Phone
 #     setCancelAction(uri) to set the cancel parameter with the URI to be called on Cancel (optional)
 #     setBeep to enable a notification beep with the object (optional)
 #     setLockIn to set the Lock-in tag to 'yes' (optional)
@@ -28,8 +28,8 @@
 #
 #     Using a Pixel image
 #
-#     require AastraIpPhoneImageScreen.rb'
-#     images = AastraIpPhoneImageScreen.new
+#     require PhoneImageScreen.rb'
+#     images = PhoneImageScreen.new
 #     images.setDestroyOnExit
 #     images.setSize(40, 40)
 #     images.setImage('fffffffc02fffffffee4ffffbfffc05fffe7ff7a7ffffffffeffeebd7fffffea6bcfffffe796f3feff6fa289f0a86f4866fa20df42414595dd0134f8037ed1637f0e2522b2dd003b6eb936f05fffbd4f4107bba6eb0080e93715000010b754001281271408c640252081b1b22500013c5c66201368004e04467520dc11067152b82094d418e100247205805494780105002601530020931400020ac5c91088b0f2b08c21c07d0c2006009fdfe81f80efe0107fe0fb1c3ffff8ffc3fffef8f7febffbfcf87ffbff64')
@@ -40,10 +40,10 @@
 #
 #     Using a GD image
 #
-#    require 'AastraIpPhoneGDImage.class.php'
-#    require 'AastraIpPhoneImageScreen.class.php'
-#    phoneImageGD = AastraIpPhoneGDImage.new
-#    object = AastraIpPhoneImageScreen.new
+#    require 'PhoneGDImage.class.php'
+#    require 'PhoneImageScreen.class.php'
+#    phoneImageGD = PhoneGDImage.new
+#    object = PhoneImageScreen.new
 #    time = Time.now.strftime("%H:%M")
 #    phoneImageGD.drawttftext(30, 0, 10, 39, time, 1, 'Ni7seg.ttf');
 #    object.setGDImage(phoneImageGD)
@@ -52,7 +52,7 @@
 ################################################################################
 
 module AastraXmlApi
-  class AastraIpPhoneImageScreen < AastraIpPhone
+  class PhoneImageScreen < Phone
     @image
     @verticalAlign
     @horizontalAlign
@@ -80,7 +80,7 @@ module AastraXmlApi
     end
 
     # Sets the image using an externally generated GD image.  This should be
-    # done with an AastraIpPhoneGDImage.
+    # done with an PhoneGDImage.
     def setGDImage(gdImage)
       img = gdImage.getGDImage
       byte = 0
@@ -110,7 +110,7 @@ module AastraXmlApi
 
     # Creates XML text output.
     def render
-      out = "<AastraIpPhoneImageScreen"
+      out = "<PhoneImageScreen"
       out += " destroyOnExit=\"yes\"" if @destroyOnExit == "yes"
       out += " cancelAction=\"#{escape(@cancelAction)}\"" if not @cancelAction.nil?
       out += " Beep=\"yes\"" if @beep == "yes"
@@ -134,7 +134,7 @@ module AastraXmlApi
         out += icon.render
       end
       out += "</IconList>\n" if iconList != 0
-      out += "</AastraIpPhoneImageScreen>\n"
+      out += "</PhoneImageScreen>\n"
       return out
     end
   end

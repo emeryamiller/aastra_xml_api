@@ -1,15 +1,15 @@
 ################################################################################
-# Aastra XML API Classes - AastraIpPhoneImageMenuEntry
+# Aastra XML API Classes - PhoneImageMenuEntry
 # Firmware 2.0 or better
 # Copyright Aastra Telecom 2008
 #
 # Ruby adaptation by Carlton O'Riley
 #
-# Internal class for AastraIpPhoneImageMenu object.
+# Internal class for PhoneImageMenu object.
 ################################################################################
 
 module AastraXmlApi
-  class AastraIpPhoneImageMenuEntry < AastraIpPhone
+  class PhoneImageMenuEntry < Phone
     @key
     @uri
 

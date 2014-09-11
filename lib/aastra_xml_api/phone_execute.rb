@@ -1,14 +1,14 @@
 ################################################################################
-# Aastra XML API Classes - AastraIpPhoneExecute
+# Aastra XML API Classes - PhoneExecute
 # Copyright Aastra Telecom 2008
 #
 # Ruby adaptation by Carlton O'Riley
 #
-# AastraIpPhoneExecute object.
+# PhoneExecute object.
 #
 # Public methods
 #
-# Inherited from AastraIpPhone
+# Inherited from Phone
 #     setBeep to enable a notification beep with the object (optional)
 #
 # Specific to the object
@@ -16,8 +16,8 @@
 #     addEntry(url,interruptCall) to add an action to be executed.
 #
 # Example
-#     require 'AastraIpPhoneExecute.class.php'
-#     execute = AastraIpPhoneExecute.new
+#     require 'PhoneExecute.class.php'
+#     execute = PhoneExecute.new
 #     execute.addEntry('http://myserver.com/script.php?choice=2')
 #     execute.addEntry('Command: Reset')
 #     aastra_output execute
@@ -25,7 +25,7 @@
 ################################################################################
 
 module AastraXmlApi
-  class AastraIpPhoneExecute < AastraIpPhone
+  class PhoneExecute < Phone
     @defaultIndex
     @triggerDestroyOnExit
 
@@ -34,7 +34,7 @@ module AastraXmlApi
     # Default behavior is to not allow a current active call to be
     # interrupted.
     def addEntry(url, interruptCall=nil)
-      @entries += [AastraIpPhoneExecuteEntry.new(url, interruptCall)]
+      @entries += [PhoneExecuteEntry.new(url, interruptCall)]
     end
 
     # When set, the previous user interface XML object is destroyed
@@ -46,14 +46,14 @@ module AastraXmlApi
     # Create XML text output.
     def render
       title = escape(@title)
-      out = "<AastraIpPhoneExecute"
+      out = "<PhoneExecute"
       out += " Beep=\"yes\"" if @beep == "yes"
       out += " triggerDestroyOnExit=\"yes\"" if @triggerDestroyOnExit == "yes"
       out += ">\n"
       @entries.each do |entry|
         out += entry.render
       end
-      out += "</AastraIpPhoneExecute>\n"
+      out += "</PhoneExecute>\n"
       return out
     end
   end

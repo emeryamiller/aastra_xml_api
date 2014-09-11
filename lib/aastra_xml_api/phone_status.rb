@@ -1,14 +1,14 @@
 ################################################################################
-# Aastra XML API Classes - AastraIpPhoneStatus
+# Aastra XML API Classes - PhoneStatus
 # Copyright Aastra Telecom 2008
 #
 # Ruby adaptation by Carlton O'Riley
 #
-# AastraIpPhoneStatus object.
+# PhoneStatus object.
 #
 # Public methods
 #
-# Inherited from AastraIpPhone
+# Inherited from Phone
 #     setBeep to enable a notification beep with the object (optional)
 #
 # Specific to the object
@@ -19,8 +19,8 @@
 #     on the idle screen.
 #
 # Example
-#     require 'AastraIpPhoneStatus.rb'
-#     status = AastraIpPhoneStatus.new
+#     require 'PhoneStatus.rb'
+#     status = PhoneStatus.new
 #     status.setSession('Session');
 #     status.setBeep
 #     status.addEntry('1', 'Message 1', '', 0)
@@ -30,7 +30,7 @@
 ################################################################################
 
 module AastraXmlApi
-  class AastraIpPhoneStatus < AastraIpPhone
+  class PhoneStatus < Phone
     @session
     @triggerDestroyOnExit
 
@@ -50,18 +50,18 @@ module AastraXmlApi
     # be nothing (default) or alert which shows the message for 3 seconds.
     # The timeout can override the default 3 seconds for an alert message.
     def addEntry(index, message, type=nil, timeout=nil)
-      @entries += [AastraIpPhoneStatusEntry.new(index, message, type, timeout)]
+      @entries += [PhoneStatusEntry.new(index, message, type, timeout)]
     end
 
     # Create XML text output.
     def render
-      xml = "<AastraIpPhoneStatus"
+      xml = "<PhoneStatus"
       xml += " Beep=\"yes\"" if @beep == "yes"
       xml += " triggerDestroyOnExit=\"yes\"" if @triggerDestroyOnExit == "yes"
       xml += ">\n"
       xml += "<Session>#{@session}</Session>\n"
       @entries.each { |entry| xml += entry.render }
-      xml += "</AastraIpPhoneStatus>\n"
+      xml += "</PhoneStatus>\n"
       return xml
     end
   end

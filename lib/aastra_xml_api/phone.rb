@@ -1,10 +1,10 @@
 ###############################################################################
-# Aastra XML API Classes - AastraIpPhone
+# Aastra XML API Classes - Phone
 # Copyright Aastra Telecom 2008
 #
 # Ruby adaptation by Carlton O'Riley
 #
-# AastraIpPhone is the root class for all the Aastra XML objects.
+# Phone is the root class for all the Aastra XML objects.
 #
 # Public methods
 #     setTitle(Title) to setup the title of an object (optional)
@@ -22,7 +22,7 @@
 ###############################################################################
 
 module AastraXmlApi
-  class AastraIpPhone
+  class Phone
     @entries
     @softkeys
     @icons
@@ -91,7 +91,7 @@ module AastraXmlApi
       "!\xdf!" => 'ss'
     }
 
-    # Create an AastraIpPhone object and set initial values. Everything
+    # Create an Phone object and set initial values. Everything
     # sent to the phone will inherit from this class.
     def initialize
       @entries = []
@@ -101,7 +101,7 @@ module AastraXmlApi
       @timeout = 0
     end
 
-    # Set the title of the AastraIpPhone object.  Typically displayed on the
+    # Set the title of the Phone object.  Typically displayed on the
     # top of the phone.
     def setTitle(title)
       @title = title
@@ -170,15 +170,15 @@ module AastraXmlApi
     # Optionally, icon is the index of the icon to display to the left of
     # the label.
     def addSoftkey(index, label, uri, icon=nil)
-      @softkeys += [AastraIpPhoneSoftkeyEntry.new(index, escape(label), escape(uri), icon)]
+      @softkeys += [PhoneSoftkeyEntry.new(index, escape(label), escape(uri), icon)]
     end
 
-    # Add an icon to be used by either a softkey of AastraIpPhoneTextMenu.
+    # Add an icon to be used by either a softkey of PhoneTextMenu.
     # Only available on the 55i, 57i, and 57iCT. The index is the same as
-    # what is referenced by addSoftkey or AastraIpPhoneTextMenu.addEntry.
+    # what is referenced by addSoftkey or PhoneTextMenu.addEntry.
     # The icon can be either a predefined icon or the hex of an icon image.
     def addIcon(index, icon)
-      @icons += [AastraIpPhoneIconEntry.new(index, icon)]
+      @icons += [PhoneIconEntry.new(index, icon)]
     end
 
     # Convert any HTML characters to the proper escaped format.
@@ -189,7 +189,7 @@ module AastraXmlApi
     end
 
     # Convert characters when using double sized text in
-    # AastraIpPhoneFormattedTextScreen.
+    # PhoneFormattedTextScreen.
     def convert_high_ascii(s)
       ret = ""
       s.each do |char|

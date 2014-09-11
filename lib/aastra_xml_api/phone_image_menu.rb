@@ -1,14 +1,14 @@
 ################################################################################
-# Aastra XML API Classes - AastraIpPhoneImageMenu
+# Aastra XML API Classes - PhoneImageMenu
 # Copyright Aastra Telecom 2008
 #
 # Ruby adaptation by Carlton O'Riley
 #
-# AastraIpPhoneImageMenu object.
+# PhoneImageMenu object.
 #
 # Public methods
 #
-# Inherited from AastraIpPhone
+# Inherited from Phone
 #     setCancelAction(uri) to set the cancel parameter with the URI to be called on Cancel (optional)
 #     setBeep to enable a notification beep with the object (optional)
 #     setTimeout(timeout) to define a specific timeout for the XML object (optional)
@@ -25,8 +25,8 @@
 #     addURI(key,uri) to add a selection key with its URI
 #
 # Example
-#     require 'AastraIpPhoneImageMenu.rb'
-#     imagem = AastraIpPhoneImageMenu.new
+#     require 'PhoneImageMenu.rb'
+#     imagem = PhoneImageMenu.new
 #     imagem.setDestroyOnExit
 #     imagem.setSize(40,144)
 #     imagem.setImage('fffffffc02fffffffee4ffffbfffc05fffe7ff7a7ffffffffeffeebd7fffffea6bcfffffe796f3feff6fa289f0a86f4866fa20df42414595dd0134f8037ed1637f0e2522b2dd003b6eb936f05fffbd4f4107bba6eb0080e93715000010b754001281271408c640252081b1b22500013c5c66201368004e04467520dc11067152b82094d418e100247205805494780105002601530020131400020a05c91088b002b08c21c0000c200000001fe800000000000000001c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020041000004008300000ff08500000000c900000000710000000000000001401400000140140000014014000001401400000140140000000000000007c0ff00000c30880000081088000008108800000c30700000062000000000003f000001e02000000330200000021000000003301e000001e0330000000021000003f033000002001e0000020000000000001e000c03fc33003c013021007c02101201f00330ff03f001e000039000003e039001e00103f003300101f8021003007c03303f003c01e000000c00001e001c03f033007802002100f002002103e000001203c401702003cc0290ff039c02902101fc02b000007c03f01a003c020039018c0ff02d03c402102703c400001203ec01e000026402b0000264029000026c029000027c01a0000338000000033800000003100000000300000000030003f00003fc03000003fc02000003fc020000030001f0000300000000030001e000030002b000030002900003fc02900003fc01a00003f00000000310030000031c01e000031f003000033f81e00003f383000001e081e000008c003000003c01e00000fc03000001f000000003d001a0000390039000039002d00003f002700000f8012000007c000000001c0000000004000000000000000000000000000')
@@ -41,7 +41,7 @@
 ################################################################################
 
 module AastraXmlApi
-  class AastraIpPhoneImageMenu < AastraIpPhone
+  class PhoneImageMenu < Phone
     @image
     @verticalAlign
     @horizontalAlign
@@ -78,11 +78,11 @@ module AastraXmlApi
     # by the user.  The full URI is the one set by setURIBase followed
     # by this uri.
     def addURI(key, uri)
-      @entries += [AastraIpPhoneImageMenuEntry.new(key, uri)]
+      @entries += [PhoneImageMenuEntry.new(key, uri)]
     end
 
     # Sets the image based on an externally generated GD image.  Image must
-    # be 40x144 in size and should be created using AastraIpPhoneGDImage.
+    # be 40x144 in size and should be created using PhoneGDImage.
     def setGDImage(gdImage)
       img = gdImage.getGDImage
       byte = 0
@@ -107,7 +107,7 @@ module AastraXmlApi
     # Create XML text output.
     def render
       title = escape(@title)
-      out = "<AastraIpPhoneImageMenu"
+      out = "<PhoneImageMenu"
       out += " destroyOnExit=\"yes\"" if @destroyOnExit == "yes"
       if not @cancelAction.nil? then
         cancelAction = escape(@cancelAction)
@@ -138,7 +138,7 @@ module AastraXmlApi
         out += icon.render
       end
       out += "</IconList>\n" if iconList != 0
-      out += "</AastraIpPhoneImageMenu>\n"
+      out += "</PhoneImageMenu>\n"
       return out
     end
   end

@@ -1,14 +1,14 @@
 ################################################################################
-# Aastra XML API Classes - AastraIpPhoneTextScreen
+# Aastra XML API Classes - PhoneTextScreen
 # Copyright Aastra Telecom 2008
 #
 # Ruby adaptation by Carlton O'Riley
 #
-# AastraIpPhoneTextScreen object.
+# PhoneTextScreen object.
 #
 # Public methods
 #
-# Inherited from AastraIpPhone
+# Inherited from Phone
 #     setTitle(Title) to setup the title of an object (optional)
 #     setTitleWrap to set the title to be wrapped on 2 lines (optional)
 #     setDestroyOnExit to set DestroyonExit parameter to 'yes', 'no' by default (optional)
@@ -27,8 +27,8 @@
 #     setAllowDTMF to allow DTMF passthrough on the object
 #
 # Example
-#     require 'AastraIpPhoneTextScreen.rb'
-#     text = AastraIpPhoneTextScreen.new
+#     require 'PhoneTextScreen.rb'
+#     text = PhoneTextScreen.new
 #     text.setTitle('Title')
 #     text.setText('Text to be displayed.')
 #     text.setDestroyOnExit
@@ -40,7 +40,7 @@
 ################################################################################
 
 module AastraXmlApi
-  class AastraIpPhoneTextScreen < AastraIpPhone
+  class PhoneTextScreen < Phone
     @text
     @doneAction
     @allowDTMF
@@ -62,7 +62,7 @@ module AastraXmlApi
 
     # Create XML text output.
     def render
-      xml = "<AastraIpPhoneTextScreen"
+      xml = "<PhoneTextScreen"
       xml += " destroyOnExit=\"yes\"" if @destroyOnExit == "yes"
       xml += " cancelAction=\"#{escape(@cancelAction)}\"" if not @cancelAction.nil?
       xml += " doneAction=\"#{escape(@doneAction)}\"" if not @doneAction.nil?
@@ -88,7 +88,7 @@ module AastraXmlApi
         xml += icon.render
       end
       xml += "</IconList>\n" if iconList != 0
-      xml += "</AastraIpPhoneTextScreen>\n"
+      xml += "</PhoneTextScreen>\n"
       return xml
     end
   end

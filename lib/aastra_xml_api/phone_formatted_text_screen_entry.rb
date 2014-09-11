@@ -1,15 +1,15 @@
 ################################################################################
-# Aastra XML API Classes - AastraIpPhoneFormattedTextScreenEntry
+# Aastra XML API Classes - PhoneFormattedTextScreenEntry
 # Firmware 2.0 or better
 # Copyright Aastra Telecom 2008
 #
 # Ruby adaptation by Carlton O'Riley
 #
-# Internal class for AastraIpPhoneFormattedTextScreen object.
+# Internal class for PhoneFormattedTextScreen object.
 ################################################################################
 
 module AastraXmlApi
-  class AastraIpPhoneFormattedTextScreenEntry < AastraIpPhone
+  class PhoneFormattedTextScreenEntry < Phone
     @text
     @size
     @align

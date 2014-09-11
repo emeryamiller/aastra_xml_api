@@ -1,19 +1,19 @@
 ########################################################################################################
-# Aastra XML API Classes - AastraIpPhoneDirectoryEntry
+# Aastra XML API Classes - PhoneDirectoryEntry
 # Copyright Aastra Telecom 2008
 #
 # Ruby adaptation by Carlton O'Riley
 #
-# Internal class for AastraIpPhoneDirectory object.
+# Internal class for PhoneDirectory object.
 ########################################################################################################
 
 module AastraXmlApi
-  class AastraIpPhoneDirectoryEntry < AastraIpPhone
+  class PhoneDirectoryEntry < Phone
     @name
     @telephone
 
     # Create new name and number entry.  Overrides the initialize method
-    # of AastraIpPhone.
+    # of Phone.
     def initialize(name, telephone)
       @name = name
       @telephone = telephone

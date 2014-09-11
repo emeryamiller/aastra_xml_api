@@ -1,14 +1,14 @@
 ################################################################################
-# Aastra XML API Classes - AastraIpPhoneTextMenuEntry
+# Aastra XML API Classes - PhoneTextMenuEntry
 # Copyright Aastra Telecom 2008
 #
 # Ruby adaptation by Carlton O'Riley
 #
-# Internal class for AastraIpPhoneTextMenu object.
+# Internal class for PhoneTextMenu object.
 ################################################################################
 
 module AastraXmlApi
-  class AastraIpPhoneTextMenuEntry < AastraIpPhone
+  class PhoneTextMenuEntry < Phone
     @name
     @url
     @selection

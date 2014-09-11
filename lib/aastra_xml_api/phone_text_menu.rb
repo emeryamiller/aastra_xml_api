@@ -1,12 +1,12 @@
 ################################################################################
-# Aastra XML API Classes - AastraIpPhoneTextMenu
+# Aastra XML API Classes - PhoneTextMenu
 # Copyright Aastra Telecom 2008
 #
-# AastraIpPhoneTextMenu object.
+# PhoneTextMenu object.
 #
 # Public methods
 #
-# Inherited from AastraIpPhone
+# Inherited from Phone
 #     setTitle(Title) to setup the title of an object (optional)
 #     setTitleWrap to set the title to be wrapped on 2 lines (optional)
 #     setDestroyOnExit to set DestroyOnExit parameter to "yes" (optional)
@@ -27,8 +27,8 @@
 #     natsortbyname to order the list
 #
 # Example 1
-#    require 'AastraIpPhoneTextMenu.rb'
-#    menu = AastraIpPhoneTextMenu.new
+#    require 'PhoneTextMenu.rb'
+#    menu = PhoneTextMenu.new
 #    menu.setTitle('Title')
 #    menu.setDestroyOnExit
 #    menu.setDeFaultIndex('3')
@@ -41,8 +41,8 @@
 #    aastra_output menu
 #
 # Example 2
-#    require 'AastraIpPhoneTextMenu.rb'
-#    menu = AastraIpPhoneTextMenu.new
+#    require 'PhoneTextMenu.rb'
+#    menu = PhoneTextMenu.new
 #    menu.setTitle('Title')
 #    menu.setDestroyOnExit
 #    menu.setDeFaultIndex('2')
@@ -60,7 +60,7 @@
 ################################################################################
 
 module AastraXmlApi
-  class AastraIpPhoneTextMenu < AastraIpPhone
+  class PhoneTextMenu < Phone
     @defaultIndex
     @style
     @wraplist
@@ -82,7 +82,7 @@ module AastraXmlApi
     # that is shown with the menu entry.  dial is what is called when
     # the user hits a softkey with the URI "SoftKey:Dial2".
     def addEntry(name, url, selection=nil, icon=nil, dial=nil)
-      @entries += [AastraIpPhoneTextMenuEntry.new(name, url, selection, icon, dial)]
+      @entries += [PhoneTextMenuEntry.new(name, url, selection, icon, dial)]
     end
 
     # Allows entries in the list to wrap.
@@ -110,7 +110,7 @@ module AastraXmlApi
     # Create XML text output.
     def render
       @maxitems = 30 if @maxitems.nil?
-      xml = "<AastraIpPhoneTextMenu"
+      xml = "<PhoneTextMenu"
       xml += " destroyOnExit=\"yes\"" if @destroyOnExit == "yes"
       xml += " cancelAction=\"#{escape(@cancelAction)}\"" if not @cancelAction.nil?
       xml += " defaultIndex=\"#{@defaultIndex}\"" if not @defaultIndex.nil?
@@ -141,7 +141,7 @@ module AastraXmlApi
         xml += icon.render
       end
       xml += "</IconList>\n" if iconList != 0
-      xml += "</AastraIpPhoneTextMenu>\n"
+      xml += "</PhoneTextMenu>\n"
       return xml
     end
   end

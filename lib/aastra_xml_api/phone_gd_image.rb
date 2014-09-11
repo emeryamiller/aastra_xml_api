@@ -1,14 +1,14 @@
 require 'GD'
 
 ################################################################################
-# Aastra XML API Classes - Aastra XML API Classes - AastraIpPhoneGDImage
+# Aastra XML API Classes - Aastra XML API Classes - PhoneGDImage
 # Copyright Aastra Telecom 2008
 #
 # Ruby adaptation by Carlton O'Riley
 #
 # Firmware 2.2.0 or better
 #
-# AastraIpPhoneGDImage for AastraIpPhoneImageScreen and AastraIpPhoneImageScreen.
+# PhoneGDImage for PhoneImageScreen and PhoneImageScreen.
 #
 # ruby needs ruby-gd gem installed
 # ------------------------------
@@ -72,21 +72,21 @@ require 'GD'
 #   Rails based platform      RAILS_ROOT/fonts
 #
 # Example 1
-#	require 'AastraIpPhoneGDImage.rb'
-#	phoneImageGD = AastraIpPhoneGDImage.new
+#	require 'PhoneGDImage.rb'
+#	phoneImageGD = PhoneGDImage.new
 #	time = Time.now.strftime("%H:%M")
 #	phoneImageGD.drawttftext(30, 0, 10, 39, time, 1,'Ni7seg.ttf')
 #
 # Example 2
-#	require 'AastraIpPhoneGDImage.rb'
-#	phoneImageGD = AastraIpPhoneGDImage.new
+#	require 'PhoneGDImage.rb'
+#	phoneImageGD = PhoneGDImage.new
 #	utf8text = "&#19996;&#19997;&#19998;&#19999;&#20024;"
 #	phoneImageGD.drawttftext(20, 0, 5, 35, utf8text, 1, 'arialuni.ttf')
 #
 ################################################################################
 
 module AastraXmlApi
-  class AastraIpPhoneGDImage
+  class PhoneGDImage
     @img
     @white
     @black

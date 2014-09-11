@@ -1,15 +1,15 @@
 ################################################################################
-# Aastra XML API Classes - AastraIpPhoneExecuteEntry
+# Aastra XML API Classes - PhoneExecuteEntry
 # Firmware 1.4.1 or better
 # Copyright Aastra Telecom 2008
 #
 # Ruby adaptation by Carlton O'Riley
 #
-# Internal class for AastraIpPhoneExecute object.
+# Internal class for PhoneExecute object.
 ################################################################################
 
 module AastraXmlApi
-  class AastraIpPhoneExecuteEntry < AastraIpPhone
+  class PhoneExecuteEntry < Phone
     @url
     @interruptCall
 

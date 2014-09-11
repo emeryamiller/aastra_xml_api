@@ -1,14 +1,14 @@
 ################################################################################
-# Aastra XML API Classes - AastraIpPhoneConfiguration
+# Aastra XML API Classes - PhoneConfiguration
 # Copyright Aastra Telecom 8007
 #
 # Ruby adaptation by Carlton O'Riley
 #
-# AastraIpPhoneConfiguration object.
+# PhoneConfiguration object.
 #
 # Public methods
 #
-# Inherited from AastraIpPhone
+# Inherited from Phone
 #     setBeep to enable a notification beep with the object (optional)
 #
 # Specific to the object
@@ -17,8 +17,8 @@
 #     "yes" (optional)
 #
 # Example
-#     require 'AastraIpPhoneConfiguration.rb'
-#     configuration = AastraIpPhoneConfiguration.new
+#     require 'PhoneConfiguration.rb'
+#     configuration = PhoneConfiguration.new
 #     configuration.addEntry('softkey1 label','Test')
 #     configuration.addEntry('softkey1 type','xml')
 #     configuration.setTriggerDestroyOnExit
@@ -28,10 +28,10 @@
 ################################################################################
 
 module AastraXmlApi
-  class AastraIpPhoneConfiguration < AastraIpPhone
+  class PhoneConfiguration < Phone
     # Adds a parameter and value entry to the list.
     def addEntry(parameter, value)
-      @entries += [AastraIpPhoneConfigurationEntry.new(parameter, value)]
+      @entries += [PhoneConfigurationEntry.new(parameter, value)]
     end
 
     # When set, the previous user interface XML object is destroyed
@@ -42,15 +42,15 @@ module AastraXmlApi
 
     # Create XML text output.
     def render
-      out = "<AastraIpPhoneConfiguration"
+      out = "<PhoneConfiguration"
       out += " Beep=\"yes\"" if @beep == "yes"
       out += " triggerDestroyOnExit=\"yes\"" if @triggerDestroyOnExit == "yes"
       out += ">\n"
       @entries.each do |entry|
         out += entry.render
       end
-      out += "</AastraIpPhoneConfiguration>\n"
+      out += "</PhoneConfiguration>\n"
       return out
     end
-  end
+    end
 end

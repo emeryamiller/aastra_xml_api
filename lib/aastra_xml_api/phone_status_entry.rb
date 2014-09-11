@@ -1,14 +1,14 @@
 ################################################################################
-# Aastra XML API Classes - AastraIpPhoneStatusEntry
+# Aastra XML API Classes - PhoneStatusEntry
 # Copyright Aastra Telecom 2008
 #
 # Ruby adaptation by Carlton O'Riley
 #
-# Internal class for AastraIpPhoneStatus object.
+# Internal class for PhoneStatus object.
 ################################################################################
 
 module AastraXmlApi
-  class AastraIpPhoneStatusEntry < AastraIpPhone
+  class PhoneStatusEntry < Phone
     @index
     @message
     @type

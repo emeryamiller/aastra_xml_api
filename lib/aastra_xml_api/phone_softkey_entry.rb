@@ -1,15 +1,15 @@
 ################################################################################
-# Aastra XML API Classes - AastraIpPhoneSoftkeyEntry
+# Aastra XML API Classes - PhoneSoftkeyEntry
 # Firmware 2.2.0 or better
 # Copyright Aastra Telecom 2008
 #
 # Ruby adaptation by Carlton O'Riley
 #
-# Internal class for AastraIpPhone object.
+# Internal class for Phone object.
 ################################################################################
 
 module AastraXmlApi
-  class AastraIpPhoneSoftkeyEntry
+  class PhoneSoftkeyEntry
     @index
     @label
     @uri

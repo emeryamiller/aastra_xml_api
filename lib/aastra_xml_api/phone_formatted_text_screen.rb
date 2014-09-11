@@ -1,12 +1,12 @@
 ################################################################################
-# Aastra XML API Classes - AastraIpFormattedPhoneTextScreen
+# Aastra XML API Classes - FormattedPhoneTextScreen
 # Copyright Aastra Telecom 2008
 #
-# AastraIpPhoneFormattedTextScreen object.
+# PhoneFormattedTextScreen object.
 #
 # Public methods
 #
-# Inherited from AastraIpPhone
+# Inherited from Phone
 #     setDestroyOnExit to set DestroyonExit parameter to 'yes', 'no' by default (optional)
 #     setCancelAction(uri) to set the cancel parameter with the URI to be called on Cancel (optional)
 #     setBeep to enable a notification beep with the object (optional)
@@ -25,8 +25,8 @@
 #     setDoneAction(uri) to set the URI to be called when the user selects the default "Done" key (optional)
 #
 # Example
-#     require 'AastraIpPhoneFormattedTextScreen.rb'
-#     ftext = AastraIpPhoneFormattedTextScreen.new
+#     require 'PhoneFormattedTextScreen.rb'
+#     ftext = PhoneFormattedTextScreen.new
 #     ftext.setDestroyOnExit
 #     ftext.addLine('Formatted Screen', 'double', 'center')
 #     ftext.setScrollStart('2')
@@ -45,7 +45,7 @@
 ################################################################################
 
 module AastraXmlApi
-  class AastraIpPhoneFormattedTextScreen < AastraIpPhone
+  class PhoneFormattedTextScreen < Phone
     @doneAction
     @allowDTMF
 
@@ -53,19 +53,19 @@ module AastraXmlApi
     # or 'double'. align can be one of 'left' (default), 'center',
     # or 'right'.
     def addLine(text, size=nil, align=nil)
-      @entries += [AastraIpPhoneFormattedTextScreenEntry.new(text, size, align, 'normal')]
+      @entries += [PhoneFormattedTextScreenEntry.new(text, size, align, 'normal')]
     end
 
     # Starts the beginning of a scrolling section on the display. If height
     # is not given, then all available space is used to display the scrolling
     # section. Otherwise, height cannot be bigger than 2.
     def setScrollStart(height=nil)
-      @entries += [AastraIpPhoneFormattedTextScreenEntry.new(nil, height, nil, 'scrollstart')]
+      @entries += [PhoneFormattedTextScreenEntry.new(nil, height, nil, 'scrollstart')]
     end
 
     # Sets the end of a scrolling section on the display.
     def setScrollEnd
-      @entries += [AastraIpPhoneFormattedTextScreenEntry.new(nil, nil, nil, 'scrollend')]
+      @entries += [PhoneFormattedTextScreenEntry.new(nil, nil, nil, 'scrollend')]
     end
 
     # Defines URI to call when the user selects the 'Done' softkey.
@@ -81,7 +81,7 @@ module AastraXmlApi
 
     # Create XML text output.
     def render
-      out = "<AastraIpPhoneFormattedTextScreen"
+      out = "<PhoneFormattedTextScreen"
       out += " destroyOnExit=\"yes\"" if @destroyOnExit == "yes"
       if not @cancelAction.nil? then
         cancelAction = escape(@cancelAction)
@@ -112,7 +112,7 @@ module AastraXmlApi
         out += icon.render
       end
       out += "</IconList>\n" if iconList != 0
-      out += "</AastraIpPhoneFormattedTextScreen>\n"
+      out += "</PhoneFormattedTextScreen>\n"
       return out
     end
   end
