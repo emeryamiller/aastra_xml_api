@@ -22,7 +22,7 @@ Or install it yourself as:
 
     require 'aastra_xml_api'
 
-    AastraIPPhone.new ...
+    AastraXmlApi::Phone.new...
 
 ## Contributing
 
