@@ -1,6 +1,7 @@
 # AastraXmlApi
 
 This is a Gem of Carlton O'Riley's port of Aastra XML API Classes
+
 To view the original project: https://code.google.com/p/ruby-aastra/
 
 ## Installation
@@ -20,7 +21,7 @@ Or install it yourself as:
 ## Usage
 
     require 'aastra_xml_api'
-    
+
     AastraIPPhone.new ...
 
 ## Contributing

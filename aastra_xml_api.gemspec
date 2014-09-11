@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["emery.miller@easyofficephone.com"]
   spec.description   = %q{Gemified version of Carlton O'Riley's Aastra XML Ruby Port}
   spec.summary       = %q{Aastra XML API for Ruby}
-  spec.homepage      = "http://www.easyofficephone.com"
+  spec.homepage      = "https://github.com/EasyOfficePhone/aastra_xml_api"
   spec.license       = "GNU GPL v2"
 
   spec.files         = `git ls-files`.split($/)
