@@ -42,14 +42,14 @@ module AastraXmlApi
 
     # Create XML text output.
     def render
-      out = "<PhoneConfiguration"
+      out = "<AastraIPPhoneConfiguration"
       out += " Beep=\"yes\"" if @beep == "yes"
       out += " triggerDestroyOnExit=\"yes\"" if @triggerDestroyOnExit == "yes"
       out += ">\n"
       @entries.each do |entry|
         out += entry.render
       end
-      out += "</PhoneConfiguration>\n"
+      out += "</AastraIPPhoneConfiguration>\n"
       return out
     end
     end

@@ -46,14 +46,14 @@ module AastraXmlApi
     # Create XML text output.
     def render
       title = escape(@title)
-      out = "<PhoneExecute"
+      out = "<AastraIPPhoneExecute"
       out += " Beep=\"yes\"" if @beep == "yes"
       out += " triggerDestroyOnExit=\"yes\"" if @triggerDestroyOnExit == "yes"
       out += ">\n"
       @entries.each do |entry|
         out += entry.render
       end
-      out += "</PhoneExecute>\n"
+      out += "</AastraIPPhoneExecute>\n"
       return out
     end
   end

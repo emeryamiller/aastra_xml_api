@@ -55,13 +55,13 @@ module AastraXmlApi
 
     # Create XML text output.
     def render
-      xml = "<PhoneStatus"
+      xml = "<AastraIPPhoneStatus"
       xml += " Beep=\"yes\"" if @beep == "yes"
       xml += " triggerDestroyOnExit=\"yes\"" if @triggerDestroyOnExit == "yes"
       xml += ">\n"
       xml += "<Session>#{@session}</Session>\n"
       @entries.each { |entry| xml += entry.render }
-      xml += "</PhoneStatus>\n"
+      xml += "</AastraIPPhoneStatus>\n"
       return xml
     end
   end

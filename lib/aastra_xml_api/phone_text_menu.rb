@@ -110,7 +110,7 @@ module AastraXmlApi
     # Create XML text output.
     def render
       @maxitems = 30 if @maxitems.nil?
-      xml = "<PhoneTextMenu"
+      xml = "<AastraIPPhoneTextMenu"
       xml += " destroyOnExit=\"yes\"" if @destroyOnExit == "yes"
       xml += " cancelAction=\"#{escape(@cancelAction)}\"" if not @cancelAction.nil?
       xml += " defaultIndex=\"#{@defaultIndex}\"" if not @defaultIndex.nil?
@@ -141,7 +141,7 @@ module AastraXmlApi
         xml += icon.render
       end
       xml += "</IconList>\n" if iconList != 0
-      xml += "</PhoneTextMenu>\n"
+      xml += "</AastraIPPhoneTextMenu>\n"
       return xml
     end
   end

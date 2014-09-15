@@ -81,7 +81,7 @@ module AastraXmlApi
 
     # Create XML text output.
     def render
-      out = "<PhoneFormattedTextScreen"
+      out = "<AastraIPPhoneFormattedTextScreen"
       out += " destroyOnExit=\"yes\"" if @destroyOnExit == "yes"
       if not @cancelAction.nil? then
         cancelAction = escape(@cancelAction)
@@ -112,7 +112,7 @@ module AastraXmlApi
         out += icon.render
       end
       out += "</IconList>\n" if iconList != 0
-      out += "</PhoneFormattedTextScreen>\n"
+      out += "</AastraIPPhoneFormattedTextScreen>\n"
       return out
     end
   end

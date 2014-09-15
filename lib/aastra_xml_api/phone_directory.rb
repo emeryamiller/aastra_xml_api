@@ -83,7 +83,7 @@ module AastraXmlApi
 
     # Create XML text output.
     def render
-      out = "<PhoneDirectory"
+      out = "<AastraIPPhoneDirectory"
       if not @previous.nil? then
         previous = escape(@previous)
         out += " previous=\"#{previous}\""
@@ -115,7 +115,7 @@ module AastraXmlApi
       @softkeys.each do |softkey|
         out += softkey.render
       end
-      out += "</PhoneDirectory>\n"
+      out += "</AastraIPPhoneDirectory>\n"
       return out
     end
   end
